@@ -74,6 +74,49 @@ section {
   margin-top: 24px;
   color: var(--gray);
 }
+/* =========================
+   ANIMATED HERO BACKGROUND
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient layer */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 113, 227, 0.25),
+    rgba(120, 80, 255, 0.25),
+    rgba(0, 200, 180, 0.25)
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: 0;
+}
+
+/* Keep content above animation */
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* =========================
    BUTTONS

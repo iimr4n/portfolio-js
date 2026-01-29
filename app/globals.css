@@ -1,23 +1,16 @@
 /* =========================
-   RESET
+   CSS VARIABLES
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* =========================
-   THEME VARIABLES
-========================= */
 :root {
   --bg: #ffffff;
   --text: #000000;
   --gray: #6e6e73;
-  --accent: #0071e3;
   --border: #d2d2d7;
+  --accent: #0071e3;
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f1115;
@@ -28,12 +21,22 @@
 }
 
 /* =========================
-   BASE STYLES
+   BASE RESET
 ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -42,9 +45,10 @@ body {
 /* =========================
    LAYOUT
 ========================= */
+
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 24px;
 }
 
@@ -52,15 +56,71 @@ section {
   padding: 96px 0;
 }
 
-/* =========================
-   HERO
-========================= */
-.hero {
-  padding-top: 140px;
+@media (max-width: 768px) {
+  section {
+    padding: 72px 0;
+  }
 }
 
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 113, 227, 0.18),
+    rgba(120, 80, 255, 0.18),
+    rgba(0, 200, 180, 0.18)
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+  z-index: 0;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hero content alignment */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Hero text */
 .hero h1 {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(42px, 6vw, 72px);
   font-weight: 600;
 }
 
@@ -74,248 +134,93 @@ section {
   margin-top: 24px;
   color: var(--gray);
 }
+
 /* =========================
-   ANIMATED HERO BACKGROUND
+   HERO ACTIONS (GLASS)
 ========================= */
 
-.hero {
-  position: relative;
-  overflow: hidden;
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 18px;
+  border-radius: 18px;
 }
 
-/* Animated gradient layer */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 113, 227, 0.15),
-    rgba(120, 80, 255, 0.25),
-    rgba(0, 200, 180, 0.25)
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-  z-index: 0;
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Keep content above animation */
-.hero > .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Animation */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
   }
 }
 
 /* =========================
    BUTTONS
 ========================= */
-.btn-primary {
-  display: inline-block;
-  margin-top: 32px;
-  padding: 14px 22px;
+
+.btn-secondary {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
   background: var(--accent);
   color: #ffffff;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-/* =========================
-   CONTACT
-========================= */
-#contact h3 {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
-#contact a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   FOOTER (FUTURE)
-========================= */
-.footer {
-  padding: 32px 0;
-  text-align: center;
-  color: var(--gray);
-  border-top: 1px solid var(--border);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  section {
-    padding: 72px 0;
-  }
-
-  .hero {
-    padding-top: 120px;
-  }
-}
-/* =========================
-   ANIMATIONS
-========================= */
-
-/* Fade + slide up */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Apply animations */
-.hero h1 {
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-.hero h2 {
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-.hero p {
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
-  opacity: 0;
-}
-
-.btn-primary {
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
-/* Hover animation */
-.btn-primary:hover {
+  border-color: var(--accent);
   transform: translateY(-2px);
-  transition: transform 0.2s ease;
 }
 
 /* =========================
-   SOCIAL LINKS
+   SOCIAL ICONS
 ========================= */
-.socials {
-  margin-top: 24px;
-  display: flex;
-  gap: 16px;
-}
-
-.socials a {
-  color: var(--accent);
-  font-weight: 500;
-  text-decoration: none;
-  position: relative;
-}
-
-.socials a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.socials a:hover::after {
-  width: 100%;
-}
-html {
-  scroll-behavior: smooth;
-}
-/* =========================
-   HERO SOCIAL ICONS
-========================= */
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 32px;
-}
 
 .social-icons {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .social-icons a {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
   transition: all 0.25s ease;
 }
 
 .social-icons a:hover {
   background: var(--accent);
-  border-color: var(--accent);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
 .social-icons svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
+
 /* =========================
    ABOUT SECTION
 ========================= */
-
-.about {
-  background: rgba(0, 0, 0, 0.03);
-}
-
-@media (prefers-color-scheme: dark) {
-  .about {
-    background: rgba(255, 255, 255, 0.04);
-  }
-}
 
 .about h3 {
   font-size: 32px;
@@ -352,80 +257,9 @@ html {
 .philosophy {
   font-style: italic;
 }
+
 /* =========================
-   GLASS HERO ACTIONS
-========================= */
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 14px 18px;
-  border-radius: 18px;
-  width: fit-content;
-}
-
-/* Glass effect */
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Dark mode glass tuning */
-@media (prefers-color-scheme: dark) {
-  .glass {
-    background: rgba(255, 255, 255, 0.06);
-  }
-}
-
-/* Social icons inside glass */
-.social-icons {
-  display: flex;
-  gap: 12px;
-}
-
-.social-icons a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.25s ease;
-}
-
-.social-icons a:hover {
-  background: var(--accent);
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.social-icons svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
-  margin-top: 64px;
-  text-align: center;
-}
-
-.footer p {
-  color: var(--gray);
-  font-size: 14px;
-}
-/* =========================
-   SKILLS SECTION
+   SKILLS
 ========================= */
 
 .skills h3 {
@@ -441,7 +275,6 @@ html {
 
 .skill-group h4 {
   margin-bottom: 16px;
-  font-size: 18px;
 }
 
 .skill-tags {
@@ -455,8 +288,6 @@ html {
   border-radius: 999px;
   border: 1px solid var(--border);
   font-size: 14px;
-  color: var(--text);
-  background: transparent;
   transition: all 0.25s ease;
 }
 
@@ -466,73 +297,28 @@ html {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
+
 /* =========================
-   RESUME BUTTON
+   CONTACT
 ========================= */
 
-.btn-secondary {
-  padding: 14px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  color: var(--text);
+#contact a {
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
-  background: transparent;
-  transition: all 0.25s ease;
 }
 
-.btn-secondary:hover {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
 /* =========================
-   RESUME MODAL
+   FOOTER
 ========================= */
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  text-align: center;
 }
 
-.modal {
-  position: relative;
-  width: min(900px, 95%);
-  height: 85vh;
-  background: var(--bg);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.modal iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-@media (max-width: 768px) {
-  .modal {
-    height: 90vh;
-  }
+.footer p {
+  font-size: 14px;
+  color: var(--gray);
 }

@@ -10,12 +10,23 @@ export default function Hero() {
           performance, and user experience.
         </p>
 
-        {/* Actions */}
+        {/* Hero Actions */}
         <div className="hero-actions glass">
+          {/* Contact Button */}
           <a href="#contact" className="btn-primary">
             Contact Me
           </a>
 
+          {/* Resume Download */}
+          <a
+            href="/Imran_Resume.pdf"
+            className="btn-secondary"
+            download
+          >
+            Download Resume
+          </a>
+
+          {/* Social Icons */}
           <div className="social-icons">
             {/* LinkedIn */}
             <a

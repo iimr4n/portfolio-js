@@ -260,3 +260,52 @@ html {
   height: 18px;
   fill: currentColor;
 }
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  .about {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.about h3 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.about h4 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  margin-bottom: 16px;
+  color: var(--gray);
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 800px;
+}
+
+.about-list li {
+  margin-bottom: 12px;
+  color: var(--gray);
+}
+
+.about-list strong {
+  color: var(--text);
+}
+
+.philosophy {
+  font-style: italic;
+}

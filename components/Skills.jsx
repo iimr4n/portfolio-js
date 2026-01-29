@@ -1,46 +1,39 @@
-export default function Skills() {
+export default function Services() {
   return (
-    <section id="skills" className="skills">
+    <section className="services editorial-section">
       <div className="container">
-        <h3>Skills</h3>
+        <span className="section-label">Services</span>
 
-        <div className="skills-grid">
-          <div className="skill-group">
-            <h4>Languages</h4>
-            <div className="skill-tags">
-              <span>JavaScript</span>
-              <span>Python</span>
-              <span>Java</span>
-            </div>
+        <div className="service-item">
+          <span className="service-number">01</span>
+          <div>
+            <h4>Web Development</h4>
+            <p>
+              Crafting responsive, high-performance interfaces using HTML,
+              CSS, JavaScript, React, and Next.js.
+            </p>
           </div>
+        </div>
 
-          <div className="skill-group">
-            <h4>Frontend</h4>
-            <div className="skill-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>React</span>
-              <span>Next.js</span>
-            </div>
-          </div>
-
-          <div className="skill-group">
+        <div className="service-item">
+          <span className="service-number">02</span>
+          <div>
             <h4>AI & Data Science</h4>
-            <div className="skill-tags">
-              <span>Machine Learning</span>
-              <span>Data Analysis</span>
-              <span>Python for AI</span>
-            </div>
+            <p>
+              Exploring machine learning, data analysis, and intelligent
+              systems to solve real-world problems.
+            </p>
           </div>
+        </div>
 
-          <div className="skill-group">
-            <h4>Tools & Practices</h4>
-            <div className="skill-tags">
-              <span>Git</span>
-              <span>Clean Code</span>
-              <span>Responsive Design</span>
-              <span>Problem Solving</span>
-            </div>
+        <div className="service-item">
+          <span className="service-number">03</span>
+          <div>
+            <h4>Brand & Digital Design</h4>
+            <p>
+              Designing clean digital identities, logos, and product visuals
+              with clarity and intent.
+            </p>
           </div>
         </div>
       </div>

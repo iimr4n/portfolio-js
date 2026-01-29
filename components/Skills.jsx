@@ -1,39 +1,28 @@
-export default function Services() {
+export default function Skills() {
   return (
-    <section className="services editorial-section reveal">
+    <section className="skills">
       <div className="container">
-        <span className="section-label">Services</span>
+        <h3>Skills</h3>
 
-        <div className="service-item">
-          <span className="service-number">01</span>
+        <div className="skills-grid">
           <div>
-            <h4>Web Development</h4>
-            <p>
-              Crafting responsive, high-performance interfaces using HTML,
-              CSS, JavaScript, React, and Next.js.
-            </p>
+            <h4>Frontend</h4>
+            <p>HTML, CSS, JavaScript, React, Next.js</p>
           </div>
-        </div>
 
-        <div className="service-item">
-          <span className="service-number">02</span>
           <div>
-            <h4>AI & Data Science</h4>
-            <p>
-              Exploring machine learning, data analysis, and intelligent
-              systems to solve real-world problems.
-            </p>
+            <h4>Backend</h4>
+            <p>Node.js, REST APIs, Express (learning)</p>
           </div>
-        </div>
 
-        <div className="service-item">
-          <span className="service-number">03</span>
           <div>
-            <h4>Brand & Digital Design</h4>
-            <p>
-              Designing clean digital identities, logos, and product visuals
-              with clarity and intent.
-            </p>
+            <h4>Programming</h4>
+            <p>JavaScript, Python, Java</p>
+          </div>
+
+          <div>
+            <h4>Tools</h4>
+            <p>Git, GitHub, VS Code, Linux</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <section className="projects editorial-section">
+    <section className="projects editorial-section reveal">
       <div className="container">
         <span className="section-label">Projects</span>
 

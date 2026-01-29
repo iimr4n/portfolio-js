@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="about editorial-section">
+    <section className="about editorial-section reveal">
       <div className="container">
         <span className="section-label">About</span>
 

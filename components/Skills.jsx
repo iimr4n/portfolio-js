@@ -1,28 +1,50 @@
 export default function Skills() {
   return (
-    <section className="skills">
+    <section>
       <div className="container">
-        <h3>Skills</h3>
+        <h2
+          style={{
+            fontSize: "32px",
+            fontWeight: 600,
+            marginBottom: "32px",
+          }}
+        >
+          Skills
+        </h2>
 
-        <div className="skills-grid">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "32px",
+          }}
+        >
           <div>
-            <h4>Frontend</h4>
-            <p>HTML, CSS, JavaScript, React, Next.js</p>
+            <h4 style={{ marginBottom: "8px" }}>Frontend</h4>
+            <p style={{ color: "var(--muted)" }}>
+              HTML, CSS, JavaScript, React, Next.js
+            </p>
           </div>
 
           <div>
-            <h4>Backend</h4>
-            <p>Node.js, REST APIs, Express (learning)</p>
+            <h4 style={{ marginBottom: "8px" }}>Backend</h4>
+            <p style={{ color: "var(--muted)" }}>
+              Node.js, REST APIs, Express (learning)
+            </p>
           </div>
 
           <div>
-            <h4>Programming</h4>
-            <p>JavaScript, Python, Java</p>
+            <h4 style={{ marginBottom: "8px" }}>Programming</h4>
+            <p style={{ color: "var(--muted)" }}>
+              JavaScript, Python, Java
+            </p>
           </div>
 
           <div>
-            <h4>Tools</h4>
-            <p>Git, GitHub, VS Code, Linux</p>
+            <h4 style={{ marginBottom: "8px" }}>Tools</h4>
+            <p style={{ color: "var(--muted)" }}>
+              Git, GitHub, VS Code, Linux
+            </p>
           </div>
         </div>
       </div>

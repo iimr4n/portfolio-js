@@ -1,24 +1,50 @@
 export default function About() {
   return (
-    <section className="about">
+    <section>
       <div className="container">
-        <h3>About Me</h3>
+        <h2
+          style={{
+            fontSize: "32px",
+            fontWeight: 600,
+            marginBottom: "20px",
+          }}
+        >
+          About
+        </h2>
 
-        <p>
+        <p
+          style={{
+            maxWidth: "700px",
+            color: "var(--muted)",
+            fontSize: "17px",
+            marginBottom: "16px",
+          }}
+        >
           I am an aspiring Software Engineer currently pursuing my B.Tech in
-          Artificial Intelligence and Data Science (2025–2029) at MEA Engineering
-          College, Malappuram.
+          Artificial Intelligence and Data Science (2025–2029).
         </p>
 
-        <p>
-          I enjoy building functional, aesthetic, and user-centric applications.
-          My interests span web development, AI, and digital product design, with
-          a strong focus on clarity and long-term thinking.
+        <p
+          style={{
+            maxWidth: "700px",
+            color: "var(--muted)",
+            fontSize: "17px",
+            marginBottom: "16px",
+          }}
+        >
+          I enjoy building clean, scalable web applications and exploring how
+          software, data, and design come together to solve real-world problems.
         </p>
 
-        <p>
-          I believe in <strong>calm excellence</strong> — solving complex
-          problems with simple, reliable solutions.
+        <p
+          style={{
+            maxWidth: "700px",
+            color: "var(--muted)",
+            fontSize: "17px",
+          }}
+        >
+          My approach is simple: build things that are reliable, readable, and
+          designed to last.
         </p>
       </div>
     </section>

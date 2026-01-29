@@ -322,3 +322,83 @@ section {
   font-size: 14px;
   color: var(--gray);
 }
+/* =========================
+   EDITORIAL HERO STYLE
+========================= */
+
+.editorial-hero {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.hero-name {
+  font-size: clamp(64px, 12vw, 160px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.hero-meta {
+  margin-top: 16px;
+}
+
+.hero-role {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.hero-statement {
+  margin-top: 40px;
+  max-width: 640px;
+  font-size: 20px;
+  color: var(--gray);
+}
+
+.hero-actions.minimal {
+  margin-top: 48px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* Text-only links */
+.text-link {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--text);
+  transition: width 0.3s ease;
+}
+
+.text-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .editorial-hero {
+    text-align: center;
+  }
+
+  .hero-actions.minimal {
+    justify-content: center;
+  }
+
+  .hero-statement {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

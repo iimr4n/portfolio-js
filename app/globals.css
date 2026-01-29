@@ -186,3 +186,34 @@ section {
   transform: translateY(-2px);
   transition: transform 0.2s ease;
 }
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+.socials {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.socials a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.socials a:hover::after {
+  width: 100%;
+}

@@ -381,3 +381,45 @@ html {
   color: var(--gray);
   font-size: 14px;
 }
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills h3 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.skill-group h4 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tags span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.skill-tags span:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}

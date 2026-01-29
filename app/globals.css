@@ -402,3 +402,58 @@ section {
     margin-right: auto;
   }
 }
+/* =========================
+   EDITORIAL SECTIONS
+========================= */
+
+.editorial-section {
+  padding: 120px 0;
+}
+
+.section-label {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 48px);
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+/* Services */
+.service-item {
+  display: flex;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gray);
+  opacity: 0.4;
+}
+
+.service-item h4 {
+  margin-bottom: 8px;
+}
+
+/* Muted text */
+.muted {
+  color: var(--gray);
+}
+
+/* Footer */
+.footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray);
+}

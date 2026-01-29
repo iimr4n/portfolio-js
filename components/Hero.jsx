@@ -1,32 +1,39 @@
 export default function Hero() {
   return (
-    <section className="hero">
+    <section>
       <div className="container">
-        <h1>AHAMMAD IMRAN A</h1>
-        <h2>Software Engineer</h2>
+        <h1 style={{ fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 600 }}>
+          Build software with clarity.
+        </h1>
 
-        <p>
-          I design and build reliable, scalable software with a focus on clean
-          architecture, performance, and user experience.
+        <p
+          style={{
+            marginTop: "20px",
+            maxWidth: "600px",
+            color: "var(--muted)",
+            fontSize: "18px",
+          }}
+        >
+          I’m Ammad Imran A, a Software Engineer focused on building clean,
+          scalable software and thoughtful digital experiences.
         </p>
 
-        <div className="hero-actions">
+        <div style={{ marginTop: "32px" }}>
           <a
             href="/Imran_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            style={{
+              display: "inline-block",
+              padding: "12px 18px",
+              borderRadius: "10px",
+              background: "var(--accent)",
+              color: "#fff",
+              textDecoration: "none",
+              fontWeight: 500,
+            }}
           >
             View Resume
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/7imran"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-          >
-            LinkedIn
           </a>
         </div>
       </div>

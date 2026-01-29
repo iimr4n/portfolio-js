@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
       <Hero />
       <About />
       <Contact />
+      <Footer />
     </>
   );
 }

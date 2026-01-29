@@ -1,12 +1,8 @@
 export default function About() {
   return (
-    <section className="about editorial-section reveal">
+    <section className="about">
       <div className="container">
-        <span className="section-label">About</span>
-
-        <h3 className="section-title">
-          Building calm, reliable software through clarity and focus.
-        </h3>
+        <h3>About Me</h3>
 
         <p>
           I am an aspiring Software Engineer currently pursuing my B.Tech in
@@ -16,14 +12,13 @@ export default function About() {
 
         <p>
           I enjoy building functional, aesthetic, and user-centric applications.
-          My interests span web development, AI, and digital product design —
-          with a long-term goal of making finance and fitness more accessible
-          through technology.
+          My interests span web development, AI, and digital product design, with
+          a strong focus on clarity and long-term thinking.
         </p>
 
-        <p className="philosophy">
-          My philosophy is <strong>Calm Excellence</strong> — solving complex
-          problems with simple, elegant solutions.
+        <p>
+          I believe in <strong>calm excellence</strong> — solving complex
+          problems with simple, reliable solutions.
         </p>
       </div>
     </section>

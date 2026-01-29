@@ -19,12 +19,13 @@ export default function Hero() {
 
           {/* Resume Download */}
           <a
-            href="/Imran_Resume.pdf"
-            className="btn-secondary"
-            download
-          >
-            Download Resume
-          </a>
+  href="/Imran_Resume.pdf"
+  className="btn-secondary"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View Resume
+</a>
 
           {/* Social Icons */}
           <div className="social-icons">

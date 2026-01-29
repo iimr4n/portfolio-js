@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <section className="services editorial-section">
+    <section className="services editorial-section reveal">
       <div className="container">
         <span className="section-label">Services</span>
 

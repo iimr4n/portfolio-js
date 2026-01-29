@@ -79,3 +79,10 @@ section {
   text-align: center;
   color: var(--gray);
 }
+.about {
+  background: red;
+}
+
+.skills {
+  background: blue;
+}

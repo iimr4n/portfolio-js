@@ -1,25 +1,23 @@
 export default function Hero() {
   return (
-    <section className="hero editorial-hero">
-      <div className="container">
-        {/* Big Name */}
-        <h1 className="hero-name">
+    <section className="hero">
+      <div className="container hero-content">
+        {/* Big Editorial Name */}
+        <h1>
           AHAMMAD <br /> IMRAN A
         </h1>
 
         {/* Role */}
-        <div className="hero-meta">
-          <span className="hero-role">Software Engineer</span>
-        </div>
+        <h2>Software Engineer</h2>
 
         {/* Statement */}
-        <p className="hero-statement">
-          I design and build reliable, scalable software with a focus on
-          clarity, performance, and long-term thinking.
+        <p>
+          I design and build reliable, scalable software with a focus on clarity,
+          performance, and long-term thinking.
         </p>
 
-        {/* Actions */}
-        <div className="hero-actions minimal">
+        {/* Minimal Actions */}
+        <div className="hero-actions">
           <a
             href="/Imran_Resume.pdf"
             target="_blank"
